@@ -1,0 +1,17 @@
+RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+AddDefaultCharset utf-8
+DirectoryIndex only.php
+<FilesMatch ".(flv|gif|jpg|jpeg|png|ico|swf|js|css|pdf|php|html|css|js|ttf)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+# gzip сжатие.
+<IfModule mod_deflate.c>
+# html, txt, css, js, json, xml, htc:
+AddOutputFilterByType DEFLATE text/html text/plain text/css application/json
+AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+AddOutputFilterByType DEFLATE text/xml application/xml text/x-component
+# веб-шрифты и svg:
+<FilesMatch "\.(ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+</FilesMatch>
+</IfModule>

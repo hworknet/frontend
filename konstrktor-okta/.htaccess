@@ -1,0 +1,6 @@
+﻿RewriteRule ^(([^/]+/)*[^.]+)$ /$1.php [L]
+AddDefaultCharset utf-8
+DirectoryIndex index.php
+<FilesMatch ".(jpg|png|js|css|ttf)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
