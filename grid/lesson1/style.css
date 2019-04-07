@@ -1,0 +1,44 @@
+body{
+	font-family: 'Arial', sans-serif;
+	font-size: 16px;
+}
+
+.container{
+	max-width: 1024px;
+	margin: 0 auto;
+	padding: 50px 20px;
+	box-sizing: border-box;
+}
+
+.grid{
+	display: grid;
+	
+	/* 1fr - 1 фракція */
+	/* grid-template-columns: 150px 1fr 150px; */
+	
+	/* 	
+		1 колонка = 150 пікселів | 2 колонка на всю ширину | 3 колонка = 150 пікселів
+		grid-template-columns: 150px | 1fr | 150px; 
+	*/
+	/* grid-template-columns: 150px 1fr 2fr 150px; */
+	
+	/* 
+		min-content - найменший розмір контенту (визначається по найдовшому слову)
+		max-content - найбільший розмір контенту (визначається по найдовшому рядку)
+	*/
+	/* grid-template-columns: 150px min-content max-content 150px; */
+	
+	/* minmax()  - вказання мінімальних і максимальних розмірів комірки */
+	grid-template-columns: 150px minmax(100px, 1fr) minmax(200px, 300px) 150px;
+
+	grid-template-rows: 150px minmax(100px, 1fr) 200px;
+}
+
+.grid__element{
+	background: #f00;
+	color: #fff;
+	padding: 20px;
+	border-radius: 20px;
+	text-align: center;
+	border: 1px solid #000;
+}
