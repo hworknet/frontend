@@ -1,0 +1,411 @@
+div > div{
+	align-items: center;
+	color: #fff;
+	display: flex;
+	font-family: Arial, sans-serif;
+	justify-content: center;
+}
+
+.red{
+	background: #FFCDD2;
+
+	display: grid;
+
+	grid-template-columns: 200px 200px 200px; /* задання відображення стовпчиків (1-3 стовпчик) */
+	grid-template-rows: 100px 75px; /*  задання відображення стовпчиків (1-2 ряд) */
+	/* == */
+	grid-template: 100px 75px / 200px 200px 200px; /* скорочений запис (спочатку ряди, потім стовпчики) */
+
+	grid-auto-rows: 50px; /* дефолтне значення висоти рядків */
+	
+	grid-gap: 10px; /* відступ між комірками */
+	/* grid-gap = grid-column-gap && grid-row-gap */
+}
+
+.red-item{
+	background: #F44336;
+	border-radius: 3px;
+}
+
+/*  */
+
+.pink{
+	background: #F8BBD0;
+
+	display: grid;
+
+	grid-template-columns: 2fr 1fr 1fr 200px; /* 1fr - 1 фракція */
+		
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.pink-item{
+	background: #E91E63;
+	border-radius: 3px;
+}
+
+/*  */
+
+.purple{
+	
+	background: #E1BEE7;
+
+	display: grid;
+
+	grid-template-columns: 1fr 1fr 1fr;
+	/* == */
+	grid-template-columns: repeat(3, 1fr); /* repeat() для повторення (кількість повторень, ширина) */
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.purple-item{
+	background: #9C27B0;
+	border-radius: 3px;
+}
+
+/*  */
+
+.deep-purple{
+	
+	background: #D1C4E9;
+
+	display: grid;
+
+	grid-template-columns: 1fr 2fr 1fr 2fr;
+	/* == */
+	grid-template-columns: repeat(2, 1fr 2fr); /* чередування в repeat() */
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.deep-purple-item{
+	background: #673AB7;
+	border-radius: 3px;
+}
+
+/*  */
+
+.indigo{
+	
+	background: #C5CAE9;
+
+	display: grid;
+
+	grid-template-columns: minmax(150px, 250px) 1fr 1fr; /* minmax() для визначення мінімальної і максимальної ширини блока */
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.indigo-item{
+	background: #3F51B5;
+	border-radius: 3px;
+}
+
+/*  */
+
+.blue{
+	
+	background: #BBDEFB;
+
+	display: grid;
+
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 50px 50px 50px;
+
+	grid-auto-flow: column; /* зміна порядку відображення 1-2-3-4-5-6-7-8-9 на 1-4-7-2-3-5-8-3-6-9 */
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.blue-item{
+	background: #2196F3;
+	border-radius: 3px;
+}
+
+/*  */
+
+.teal{
+	
+	background: #B2DFDB;
+
+	display: grid;
+	
+	grid-template-columns: repeat(auto-fill, 300px); /* repeat() для повтору, auto-fill для автоматичного заповнення */
+	/* блоки будуть перескакувати, коли будуть досягати свого обмеження в 300px */
+	
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.teal-item{
+	background: #009688;
+	border-radius: 3px;
+}
+
+/*  */
+
+.green{
+	
+	background: #C8E6C9;
+
+	display: grid;
+	
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* repeat() для повтору, minmax() для визначення при якому розмірі блоки будуть перескакувати (при мінімальному 300px) і на скільки вони будуть розтягнуті при максимальному розмірі (1fr) */
+	
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.green-item{
+	background: #4CAF50;
+	border-radius: 3px;
+}
+
+/*  */
+
+.light-green{
+	
+	background: #DCEDC8;
+
+	display: grid;
+	
+	grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); /* auto-fill - коли мінімум досягається, вони перескакують на інший рівень, але залишається місце для ефимерних елементів, яких у нас немає */
+	
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.light-green-item{
+	background: #8BC34A;
+	border-radius: 3px;
+}
+
+/*  */
+
+.lime{
+	
+	background: #F0F4C3;
+
+	display: grid;
+	
+	grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* auto-fit - коли мінімум досягається, вони перескакують на інший рівень, а якщо місця достатньо, то елементи розтягуються */
+	
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.lime-item{
+	background: #CDDC39;
+	border-radius: 3px;
+}
+
+/*  */
+
+.yellow{
+	
+	background: #FFF9C4;
+
+	display: grid;
+	
+	grid-template-columns: repeat(4, 1fr); 
+	grid-template-rows: repeat(3, 50px); 
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.yellow-item{
+	background: #FFEB3B;
+	border-radius: 3px;
+}
+
+.yellow-item:nth-child(1){
+	border: 1px solid #F57F17;
+
+	grid-column-start: 1; /* початок елемента відносно стовпчиків */
+	grid-column-end: 5; /* кінець елемента відносно стовпчиків */
+	/* == */
+	grid-column: 1 / -1; /* рівносильний запис */
+}
+
+.yellow-item:nth-child(6){
+	border: 1px solid #F57F17;
+
+	grid-column-start: 4; /* налаштовування початку елемента відносно стовпчика */
+	
+	grid-row-start: 2; /* початок елемента відносно стовпчиків */
+	grid-row-end: 4; /* кінець елемента відносно стовпчиків */
+	/* == */
+	grid-row: 2 / 4; /* рівносильний запис */
+}
+
+/*  */
+
+.amber{
+	
+	background: #FFECB3;
+
+	display: grid;
+	
+	grid-template-columns: repeat(3, 1fr); 
+
+	justify-items: start; /* вирівнювання блоків горизонтальне */
+	align-items: start; /* вирівнювання блоків вертикальне */
+	
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.amber-item{
+	background: #FFC107;
+	border-radius: 3px;
+}
+
+/*  */
+
+.orange{
+	
+	background: #FFE0B2;
+
+	display: grid;
+	
+	grid-template-columns: repeat(3, 1fr); 
+	
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.orange-item{
+	background: #FF9800;
+	border-radius: 3px;
+}
+
+.orange-item:nth-child(1){
+	align-self: start; /* вирівнювання самого елемента */
+}
+
+.orange-item:nth-child(5){
+	justify-self: start; /* вирівнювання самого елемента */
+}
+
+/*  */
+
+.deep-orange{
+	
+	background: #FFCCBC;
+
+	display: grid;
+	
+	grid-template-areas: 
+		"header"
+		"article"
+		"aside"
+		"footer"
+	; /* визначення порядку всіх областей */
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.deep-orange-header, .deep-orange-aside, .deep-orange-article, .deep-orange-footer{
+	background: #FF5722;
+	border-radius: 3px;
+}
+
+.deep-orange-header{
+	grid-area: header; /* визначення назви області */
+}
+
+.deep-orange-aside{
+	grid-area: aside; /* визначення назви області */
+}
+
+.deep-orange-article{
+	grid-area: article; /* визначення назви області */
+}
+
+.deep-orange-footer{
+	grid-area: footer; /* визначення назви області */
+}
+
+@media(min-width: 640px){
+	.deep-orange{
+		grid-template-columns: 2fr 4fr;
+		grid-template-areas: 
+		"header header"
+		"aside article"
+		"footer ."
+		; /* . символізує пустоту */
+	}
+}
+
+/*  */
+
+.brown{
+	
+	background: #D7CCC8;
+
+	display: grid;
+	
+	grid-template-areas: 
+		"header"
+		"article"
+		"aside"
+		"footer"
+	; /* визначення порядку всіх областей */
+
+	grid-auto-rows: 50px;
+
+	grid-gap: 10px;
+}
+
+.brown-header, .brown-aside, .brown-article, .brown-footer{
+	background: #795548;
+	border-radius: 3px;
+}
+
+.brown-header{
+	grid-area: header; /* визначення назви області */
+}
+
+.brown-aside{
+	grid-area: aside; /* визначення назви області */
+}
+
+.brown-article{
+	grid-area: article; /* визначення назви області */
+}
+
+.brown-footer{
+	grid-area: footer; /* визначення назви області */
+}
+
+@media(min-width: 640px){
+	.brown{
+		grid-template-columns: 2fr 4fr;
+		grid-template-areas: 
+		"header header"
+		"aside article"
+		"aside footer"
+		; /* . символізує пустоту */
+	}
+}
