@@ -151,7 +151,7 @@
 						</a>
 					</div>
 					<div class="mytext">
-						Богдан Щербаков <br> Мені 19 років <br> Захоплююсь програмуванням, дизайном <br> Навики: HTML, CSS, PHP, JS, SQL, C++<br>
+						Богдан Щербаков <br> Мені 20 років <br> Захоплююсь програмуванням, дизайном <br> Навики: HTML, CSS, PHP, JS, SQL, C++<br>
 						<div class="only-mob"><br><br></div>
 					</div>
 				</div>
