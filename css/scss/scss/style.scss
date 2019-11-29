@@ -1,0 +1,80 @@
+@import "variables";
+@import "mixins";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#grid {
+	float: left;
+	width: 100%;
+
+	> div {
+      @include grid(5, 15%);
+	}
+}
+
+body {
+	/*background: red;*/
+}
+
+@for $i from 24 to 29{
+  .#{$someVar}-#{$i}{
+    width: 50px + $i;
+    height: 50px + $i;
+  }
+}
+
+.block:not(.first) {
+	// підключення міксіна з різною кількістю параметрів
+	@include padd(blue, 20px 40px 30px);
+	background: $bgColor;
+	height: 200px;
+	margin-bottom: 20px;
+	width: $blockWidth;
+}
+
+.first {
+	background: $bgColor;
+	height: 100px;
+	margin-bottom: 20px;
+	border: $border;
+}
+
+// вкладеність
+#central_block {
+	padding: 30px;
+
+	ul {
+		list-style: none;
+		display: inline-block;
+
+		li {
+			float: left;
+			padding-right: 5px;
+			//width: (100% + 30%);
+			width: (100% / 4);
+
+			a {
+				// передача параметрів в міксін
+				@include font(blue, bold);
+				// передача параметрів не по порядку
+				@include font($color: blue, $fontW: bold);
+
+				&:hover {
+					color: red;
+				}
+			}
+
+			//a:hover {
+			//  color: red;
+			//}
+		}
+
+		a {
+			// параметри в міксін можна передавати змінніми і прямим текстом
+			@include font($color, light);
+		}
+	}
+}

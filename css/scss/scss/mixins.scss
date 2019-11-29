@@ -1,0 +1,72 @@
+@mixin grid ($cols, $margin){
+	float: left;
+	background: #ce3d3d;
+	margin-right: $margin;
+	margin-bottom: $margin;
+	height: 150px;
+
+	@if ($cols >= 5) {
+		width: 100%;
+		margin-right: 0;
+	} @else {
+		width: ((100% - (($cols  - 1) * $margin)) / $cols);
+	}
+
+
+
+	// останній елемент в ряду
+	&:nth-child(#{$cols}n){
+		margin-right: 0;
+	}
+}
+
+// міксін із змінними із наперед визначеними параметрами
+@mixin font($color: red, $fontW: bold) {
+	font-size: $mainFontSize;
+	font-weight: $fontW;
+	font-family: Arial, sans-serif;
+	color: $color;
+}
+
+// для передачі декількох параметрів, якщо кількість їх не відома
+@mixin padd($color, $padd...) {
+	padding: $padd;
+}
+
+@mixin link($link, $hover, $active, $visited) {
+	color: $link;
+
+	&:hover {
+		color: $hover;
+	}
+
+	&:active {
+		color: $active;
+	}
+
+	&:visited {
+		color: $visited;
+	}
+}
+
+a {
+	@include link(#000, red, blue, green);
+}
+
+@mixin link2($link, $hover, $active, $visited) {
+	a {
+		color: $link;
+
+		&:hover {
+			color: $hover;
+		}
+
+		&:active {
+			color: $active;
+		}
+
+		&:visited {
+			color: $visited;
+		}
+	}
+}
